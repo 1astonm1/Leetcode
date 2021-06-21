@@ -50,13 +50,18 @@ public class AddTwoNumbers {
         int carry = 0;
 
         while(l1 != null || l2 != null){
-            int val1 = (l1 != null)? l1.val : 0;    // 如果位数用尽就取0
+            // 如果位数用尽就取0
+            int val1 = (l1 != null)? l1.val : 0;
             int val2 = (l2 != null)? l2.val : 0;
-            int sum = val1 + val2 + carry;  // 把两个数字和进位符相加
-            ListNode node = new ListNode(sum%10);   // 只取个位数放在当前位置上
-            carry = sum/10;  //将进位写给carry
+            // 把两个数字和进位符相加
+            int sum = val1 + val2 + carry;
+            // 只取个位数放在当前位置上
+            ListNode node = new ListNode(sum%10);
+            //将进位写给carry
+            carry = sum/10;
             point.next = node;
-            point = point.next;  // 调整指针位置
+            // 调整指针位置
+            point = point.next;
             if (l1 != null){
                 l1 = l1.next;
             }
@@ -64,8 +69,8 @@ public class AddTwoNumbers {
                 l2 = l2.next;
             }
         }
-
-        if (carry != 0){   // 这里要注意！！！ 当所有都结束时，检查是否有进位。
+        // 这里要注意！！！ 当所有都结束时，检查是否有进位。
+        if (carry != 0){
             ListNode node = new ListNode(carry);
             point.next = node;
         }

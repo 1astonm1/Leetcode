@@ -36,14 +36,18 @@ public class Solution {
 
 
     public static int[] twoSum(int[] nums, int target){
-        Map <Integer, Integer> map = new HashMap<>();   //存储数字的hashmap
+        //存储数字的hashmap
+        Map <Integer, Integer> map = new HashMap<>(16);
         for (int i = 0; i < nums.length; i++) {
             int temp = target - nums[i];
-            if (map.containsKey(temp)){     // 如果之前存入的数字中有目标数字
-                return new int[] { map.get(temp), i};   // 直接输出两个数字的index
+            // 如果之前存入的数字中有目标数字
+            if (map.containsKey(temp)){
+                // 直接输出两个数字的index
+                return new int[] { map.get(temp), i};
             }
             else{
-                map.put(nums[i], i);    // 如果之前数组中不存在，则将当前数字和index存储到hashmap中。
+                // 如果之前数组中不存在，则将当前数字和index存储到hashmap中。
+                map.put(nums[i], i);
             }
         }
         throw new IllegalArgumentException("No two sum solution!");

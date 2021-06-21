@@ -29,9 +29,9 @@ public class ListNode {
         return res;
     }
 
-/*
-*  把数组转换成ListNode
-* */
+    /*
+    *  把数组转换成ListNode
+    * */
     public static ListNode arrayToListNode(int[] nums){
         if (nums.length == 0){
             return new ListNode();
