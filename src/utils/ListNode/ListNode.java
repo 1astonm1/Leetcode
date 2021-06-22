@@ -34,7 +34,7 @@ public class ListNode {
     * */
     public static ListNode arrayToListNode(int[] nums){
         if (nums.length == 0){
-            return new ListNode();
+            return null;
         }
         ListNode l1 = new ListNode();
         ListNode nodeTemp = new ListNode(nums[0]);
